@@ -5,7 +5,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Validator {
     private static Map<String, Integer> violations = new HashMap<>();
@@ -82,11 +84,11 @@ public class Validator {
     }
     private static String getPopularViolations() {
         if (violations.get("ticket type") > violations.get("price") &&
-        violations.get("start date") > violations.get("price")) {
+                violations.get("start date") > violations.get("price")) {
             return "ticket type and start date";
         }
         else if (violations.get("ticket type") > violations.get("start date") &&
-        violations.get("price") > violations.get("start date")) {
+                violations.get("price") > violations.get("start date")) {
             return "ticket type and price";
         }
         else {
