@@ -1,15 +1,18 @@
 public class BusTicket {
 
-    String ticketClass;
+    private String id;
 
-    String ticketType;
+    private String ticketClass;
 
-    String startDate;
+    private String ticketType;
 
-    String price;
+    private String startDate;
 
-    public BusTicket(String ticketClass, String ticketType, String startDate,
+    private String price;
+
+    public BusTicket(String id, String ticketClass, String ticketType, String startDate,
                      String price) {
+        this.id = id;
         this.ticketClass = ticketClass;
         this.ticketType = ticketType;
         this.startDate = startDate;
@@ -55,5 +58,13 @@ public class BusTicket {
     public String toString() {
         return "{ticket class = "+ticketClass+", ticket type = "+ticketType
                 +", start date = "+startDate+", price = "+price+"}";
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
